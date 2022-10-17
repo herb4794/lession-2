@@ -1,0 +1,263 @@
+@import "https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+}
+
+:root {
+  --lg-font: "Kaisei Tokumin", serif;
+  --sm-font: "Poppins", sans-serif;
+  --pink: #e5345b;
+  --pinkOrange: #ff7b00;
+}
+
+body {
+  height: 100vh;
+  background: url("banner-img-1.2e020f84.jpg") top / cover no-repeat;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.carousel-inner h1 {
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+
+.carousel-item .btn {
+  border-color: #fff !important;
+}
+
+.carousel-item .btn:hover {
+  border-color: var(--pink) !important;
+}
+
+.container {
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #0000001a;
+}
+
+.container .forms {
+  width: 200%;
+  height: 440px;
+  align-items: center;
+  transition: height .2s;
+  display: flex;
+}
+
+.container.active .forms {
+  height: 600px;
+}
+
+.container.active .login {
+  opacity: 0;
+  margin-left: -50%;
+  transition: margin-left .18s, opacity .15s;
+}
+
+.container .signup {
+  opacity: 0;
+  transition: opacity 90ms;
+}
+
+.container.active .signup {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
+.container .form {
+  width: 50%;
+  background-color: #fff;
+  padding: 30px;
+  transition: margin-left .18s;
+}
+
+.container .form .title {
+  font-size: 27px;
+  font-weight: 600;
+  position: relative;
+}
+
+.form .title:before {
+  content: "";
+  height: 3px;
+  width: 30px;
+  background-color: var(--pinkOrange);
+  border-radius: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form .input-field {
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+
+.input-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-top: 2px solid #0000;
+  border-bottom: 2px solid #ccc;
+  outline: 16px;
+  padding: 0 35px;
+  transition: all .2s;
+  position: absolute;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+  color: var(--pinkOrange);
+}
+
+.input-field input:is(:focus, :valid) ~ i.checkEmail {
+  color: var(--pinkOrange) !important;
+}
+
+.input-field input:is(:focus, :valid) ~ i.wong {
+  color: red;
+}
+
+.input-field input:is(:focus, :valid) ~ i.wongPass {
+  color: red !important;
+}
+
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: var(--pinkOrange);
+}
+
+.input-field i {
+  color: #999;
+  font-size: 23px;
+  transition: all .2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-field i.icon {
+  left: 0;
+}
+
+.input-field i.showHidePw {
+  cursor: pointer;
+  padding: 10px;
+  right: 0;
+}
+
+.form .checkbox-text {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+.checkbox-text .checkbox-content {
+  align-items: center;
+  display: flex;
+}
+
+.checkbox-content input {
+  accent-color: #4070f4;
+  margin: 0 8px -2px 4px;
+}
+
+.form .text {
+  color: #333;
+  font-size: 14px;
+}
+
+.form a.text {
+  color: #4070f4;
+  text-decoration: none;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form .button {
+  margin-top: 35px;
+}
+
+.form .button input {
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #265df2;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.button input:hover {
+  background-color: var(--pinkOrange);
+}
+
+.form .login-signup {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.error.display-error {
+  margin-bottom: 20px;
+  display: block;
+  transform: translateY(-20px);
+}
+
+.input-field .fa-check-circle {
+  visibility: hidden;
+  top: center;
+  position: absolute;
+  right: 35px;
+}
+
+.input-field .fa-exclamation-circle {
+  visibility: hidden;
+  position: absolute;
+  top: 28px;
+  right: 35px;
+}
+
+.input-field.success input {
+  border-color: #2ecc71;
+}
+
+.input-field.error input {
+  border-color: #e74c3c;
+}
+
+.input-field.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.input-field.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.input-field small {
+  color: #e74c3c;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.input-field.error small {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=login.7a5abcd3.css.map */
