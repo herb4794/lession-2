@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "lession-2",
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "source": ["./src/index.html", "./src/login.html" ],
+  "source": [
+    "./src/index.html",
+    "./src/login.html",
+    "./src/assets/js/login.js",
+    "./src/assets/js/main.js"
+  ],
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
